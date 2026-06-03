@@ -6,6 +6,8 @@ echo "==================================="
 echo "Starting deployment..."
 echo "==================================="
 
+cd ~/swaroop-dev-space
+
 echo "Pulling latest code..."
 git pull origin main
 
@@ -17,7 +19,11 @@ npm run build
 
 echo "Restarting application..."
 
-pm2 restart portfolio || pm2 start "npx vite preview --host 0.0.0.0" --name portfolio
+if pm2 describe portfolio > /dev/null; then
+    pm2 restart portfolio
+else
+    pm2 start "npx vite preview --host 0.0.0.0" --name portfolio
+fi
 
 pm2 save
 
