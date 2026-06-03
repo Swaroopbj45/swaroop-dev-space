@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 
 const roles = [
   "Full Stack Developer",
@@ -96,8 +97,8 @@ export function Hero() {
 
           <div className="flex items-center gap-3 pt-4">
             {[
-              { icon: Github, href: "https://github.com/swaroopbj45", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: GithubIcon, href: "https://github.com/swaroopbj45", label: "GitHub" },
+              { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
               { icon: Mail, href: "mailto:bandlamudiswaroop@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
