@@ -1,29 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AnimatedBackground } from "@/components/portfolio/AnimatedBackground";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Experience } from "@/components/portfolio/Experience";
+import { Projects } from "@/components/portfolio/Projects";
+import { Skills } from "@/components/portfolio/Skills";
+import { Achievements } from "@/components/portfolio/Achievements";
+import { Education } from "@/components/portfolio/Education";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { BackToTop } from "@/components/portfolio/BackToTop";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Jyothi Swaroop Bandlamudi — Associate Software Developer" },
+      { name: "description", content: "Portfolio of Jyothi Swaroop Bandlamudi. Backend, gaming systems and full-stack engineer working with Java, Spring Boot, Python, React and PostgreSQL." },
+      { property: "og:title", content: "Jyothi Swaroop Bandlamudi — Associate Software Developer" },
+      { property: "og:description", content: "Backend, gaming systems and full-stack engineer." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen text-foreground">
+      <AnimatedBackground />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Achievements />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+      <BackToTop />
     </div>
   );
 }
