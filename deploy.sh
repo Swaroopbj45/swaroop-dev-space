@@ -13,7 +13,7 @@ git fetch origin
 git reset --hard origin/main
 
 echo "Installing dependencies..."
-npm ci
+npm i
 
 echo "Building application..."
 npm run build
